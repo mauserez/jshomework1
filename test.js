@@ -19,7 +19,7 @@ console.log(
 	`2 задание - вывести тип вводных данных, \nесли не boolean,number,string то Тип х не определен`
 );
 
-let values = [true, 0, "2", null, undefined];
+/* let values = [true, 0, "2", null, undefined];
 let myTypes = ["boolean", "string", "number"];
 for (let i = 0; i < values.length; i++) {
 	let value = values[i];
@@ -29,8 +29,36 @@ for (let i = 0; i < values.length; i++) {
 	} else {
 		console.log(value + " Тип x не определен");
 	}
+} */
+
+function checkType(value) {
+	let valueType = typeof value;
+	let textValueType = "Тип x не определен";
+
+	/* switch (valueType) {
+		case "number":
+			textValueType = valueType;
+			break;
+		case "string":
+			textValueType = valueType;
+			break;
+		case "boolean":
+			textValueType = valueType;
+			break;
+	} */
+
+	//Мне кажется так эффективнее
+	const types = ["number", "string", "boolean"];
+	if (types.includes(valueType)) {
+		textValueType = valueType;
+	}
+
+	return textValueType;
 }
 
+let valueToCheck = undefined;
+console.log(checkType(valueToCheck));
+/*
 //3 задание
 clearConsoleAndGoNext();
 console.log(`3 задание - перевернуть строку Hello и вывести в консоль`);
@@ -184,3 +212,4 @@ for (var [key, value] of map) {
 Array.from(map, ([key, value]) => {
 	console.log(`Ключ — ${key}, значение — ${value}`);
 });
+ */
